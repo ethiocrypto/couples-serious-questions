@@ -4,27 +4,32 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Before Forever — Serious Questions for Couples</title>
-<meta name="description" content="25 real-life marriage situations. Answer solo and see what your choices say about you." />
+<meta name="description" content="25 real-life marriage situations. Answer solo, or answer together with your partner and see where you agree." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet" />
 <style>
-:root{--bg:#f8f6f1;--card:#fcfbf8;--sand:#efe6da;--ink:#23342f;--muted:#6b7a74;--green:#315e50;--green-soft:#86a397;--line:#e6e0d4;--accent:#c97b6a}
+:root{--bg:#f8f6f1;--card:#fcfbf8;--sand:#efe6da;--ink:#23342f;--muted:#6b7a74;--green:#315e50;--green-soft:#86a397;--line:#e6e0d4;--accent:#c97b6a;--sans:"DM Sans","Noto Sans Thai",sans-serif;--serif:Fraunces,"Noto Serif Thai",Georgia,serif}
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 24px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-size:14px;letter-spacing:0}
+.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:14px;letter-spacing:0}
+.top-right{display:flex;align-items:center;gap:16px}
 .back{font-size:13px;color:var(--muted);text-decoration:none}
+.langs{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.langs button{border:0;background:transparent;color:var(--muted);font:600 12px var(--sans);padding:7px 12px;cursor:pointer}
+.langs button.on{background:var(--green);color:#fff}
 main{max-width:760px;margin:0 auto;padding:24px 20px 60px;min-height:70vh}
 .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:600;margin:0 0 14px}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.08;margin:0 0 18px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0 0 18px}
+html[lang=th] h2,html[lang=th] h3{line-height:1.35}
 h1{font-size:clamp(38px,7vw,58px);letter-spacing:-.01em}
 h1 em{font-style:italic;color:var(--green)}
-h2{font-size:clamp(30px,5.5vw,44px)}
+h2{font-size:clamp(30px,5.5vw,44px);overflow-wrap:anywhere}
 p{color:var(--muted);line-height:1.7;font-size:16px;margin:0 0 16px}
-.pill{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;border:0;border-radius:999px;background:var(--green);color:#fff;font:600 15px "DM Sans",sans-serif;padding:16px 26px;cursor:pointer;text-decoration:none;transition:background .15s,transform .1s}
+.pill{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;border:0;border-radius:999px;background:var(--green);color:#fff;font:600 15px var(--sans);padding:16px 26px;cursor:pointer;text-decoration:none;transition:background .15s,transform .1s}
 .pill:hover{background:#274d42}.pill:active{transform:scale(.98)}
 .pill:disabled{background:var(--green-soft);cursor:not-allowed}
 .pill.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:500;padding:10px 18px;font-size:13px}
@@ -36,11 +41,11 @@ p{color:var(--muted);line-height:1.7;font-size:16px;margin:0 0 16px}
 .mode.light{background:var(--card)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
 .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-.step .num{font-family:Fraunces,serif;color:var(--accent);font-size:26px;margin-bottom:12px}
+.step .num{font-family:var(--serif);color:var(--accent);font-size:26px;margin-bottom:12px}
 .step b{display:block;font-size:14px;margin-bottom:8px}
 .step p{font-size:13px;margin:0;line-height:1.6}
 label{display:block;font-weight:600;font-size:14px;margin-bottom:10px}
-input[type=text]{width:100%;max-width:320px;padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:15px "DM Sans",sans-serif;color:var(--ink);outline:none}
+input[type=text]{width:100%;max-width:320px;padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:15px var(--sans);color:var(--ink);outline:none}
 input[type=text]:focus{border-color:var(--green)}
 .hint{font-size:12px;color:var(--muted);margin:10px 0 26px}
 .progress{display:flex;align-items:center;gap:14px;margin-bottom:34px}
@@ -50,151 +55,605 @@ input[type=text]:focus{border-color:var(--green)}
 .count{font-size:12px;color:var(--muted)}
 .story p{color:#4d5b56}
 .q{font-weight:700;margin:28px 0 20px;color:var(--ink)}
-.opt{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;font:14px/1.6 "DM Sans",sans-serif;color:var(--ink);transition:border .15s,background .15s}
+.opt{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;font:14px/1.6 var(--sans);color:var(--ink);transition:border .15s,background .15s}
 .opt:hover{border-color:var(--green-soft)}
 .opt .k{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:11px;color:var(--muted)}
 .opt.sel{background:var(--sand);border-color:#cdbfa9}
 .opt.sel .k{background:var(--green);border-color:var(--green);color:#fff}
 .nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
-.prev{background:none;border:0;color:var(--muted);font:14px "DM Sans",sans-serif;cursor:pointer}
+.prev{background:none;border:0;color:var(--muted);font:14px var(--sans);cursor:pointer}
 .prev:disabled{opacity:.4;cursor:default}
 .note{text-align:center;font-size:12px;margin-top:22px}
 .report-item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:12px}
-.report-item b{font-family:Fraunces,serif;font-weight:500;font-size:18px;display:block;margin-bottom:6px}
+.report-item b{font-family:var(--serif);font-weight:500;font-size:18px;display:block;margin-bottom:6px}
 .report-item p{margin:0;font-size:14px}
 .status{font-size:13px;margin:6px 0 22px}
 .status.ok{color:var(--green)}.status.err{color:#b04a3a}
+.invite{display:flex;gap:8px;margin:0 0 26px}
+.invite input[type=text]{max-width:none;flex:1;min-width:0;font-size:13px}
+.invite .pill{padding:12px 20px;font-size:13px}
+.who{display:grid;gap:10px;margin:8px 0 26px}
+.who>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:14px}
+.who-top{display:flex;justify-content:space-between;gap:12px}
+.who-top span:first-child{font-weight:600;overflow-wrap:anywhere}
+.who small{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.mini{height:5px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:12px}
+.mini i{display:block;height:100%;background:var(--green-soft)}
+.refresh{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
+.refresh span{font-size:12px;color:var(--muted)}
+.who .ok{color:var(--green);font-weight:600}.who .wait{color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 16px}
+.stat{border-radius:22px;padding:24px;background:var(--sand);border:1px solid var(--line)}
+.stat.light{background:var(--card)}
+.stat b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.stat .pct{font-family:var(--serif);font-size:clamp(36px,8vw,52px);line-height:1;color:var(--green);margin-bottom:10px}
+.stat.light .pct{color:var(--accent)}
+.stat p{margin:0;font-size:13px}
+.bar{height:8px;border-radius:8px;background:var(--accent);overflow:hidden;margin:0 0 10px}
+.bar i{display:block;height:100%;background:var(--green)}
+h3.sec{font-size:24px;margin:34px 0 14px}
+.cmp .row{display:flex;gap:12px;font-size:14px;color:var(--muted);line-height:1.6;margin-top:8px}
+.cmp .row span:first-child{flex:none;width:96px;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;font:13px var(--sans);cursor:pointer;padding:0;margin-top:34px}
 .footer{display:flex;justify-content:space-between;padding:22px 24px;font-size:11px;color:var(--muted)}
-@media (max-width:640px){.cards,.steps{grid-template-columns:1fr}main{padding:12px 16px 40px}.mode{padding:24px}}
+@media (max-width:640px){.cards,.steps{grid-template-columns:1fr}main{padding:12px 16px 40px}.mode{padding:24px}.topbar{padding:14px 16px}.brand>span:last-child{display:none}.stat{padding:18px}.cmp .row span:first-child{width:72px}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <a href="#/" class="brand"><span class="brand-mark">B</span><span>Before Forever</span></a>
-  <a href="#/" class="back" id="backLink" hidden>← Back</a>
+  <div class="top-right">
+    <a href="#/" class="back" id="backLink" hidden></a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="th">ไทย</button>
+    </div>
+  </div>
 </header>
 <main id="app"></main>
-<footer class="footer"><span>Before Forever · Serious questions for couples</span></footer>
+<footer class="footer"><span id="footerText"></span></footer>
 
 <script src="questions.js"></script>
+<script src="questions.th.js"></script>
 <script>
-const S = window.SITUATIONS, N = S.length, KEY = "bf_session";
+const EN = window.SITUATIONS, TH = window.SITUATIONS_TH, N = EN.length, LANG_KEY = "bf_lang";
 const app = document.getElementById("app"), back = document.getElementById("backLink");
+const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) } catch { return null } };
-const save = s => { try { localStorage.setItem(KEY, JSON.stringify(s)) } catch {} };
 const arrow = '<span aria-hidden="true">↗</span>';
 
+// Each mode keeps its own progress on this device.
+const MODES = {
+  solo: { key: "bf_session", q: "#/q/", done: "#/done", start: "#/solo" },
+  together: { key: "bf_together", q: "#/t/q/", done: "#/t/done", start: "#/together" },
+};
+const loadM = m => { try { return JSON.parse(localStorage.getItem(MODES[m].key)) } catch { return null } };
+const saveM = (m, s) => { try { localStorage.setItem(MODES[m].key, JSON.stringify(s)) } catch {} };
+const clearM = m => { try { localStorage.removeItem(MODES[m].key) } catch {} };
+
+// Website text in each language.
+const TEXT = {
+  en: {
+    back: "← Back",
+    footer: "Before Forever · Serious questions for couples",
+    continue: "Continue your saved session",
+    openTogether: "Open your together session",
+    homeEyebrow: "Serious questions for couples",
+    homeP1: "You can know what someone says they believe and still not know what they would do when real life gets hard.",
+    homeP2: n => `Before Forever puts you inside ${n} real-life situations about money, family, faith, boundaries, trust, children and everything in between. Choose what you honestly think should happen.`,
+    soloTitle: "Answer solo",
+    soloText: n => `Answer the same ${n} situations by yourself and see the patterns in your decisions: what you expect from marriage, where your boundaries are, what you would sacrifice, and what you may not have noticed about yourself.`,
+    togetherTitle: "Answer together",
+    togetherText: n => `Both of you answer the same ${n} situations on your own, then see where your thinking meets, where it doesn't, and the conversations to have before life asks the question for you.`,
+    introTitle: "What do your answers say about the way you approach marriage?",
+    introText: n => `Answer ${n} realistic situations about family, money, children, privacy and everyday married life. There's no timer. Choose what you would honestly do.`,
+    step1: n => `Answer all ${n} situations`,
+    step1Text: "Pick the answer closest to what you really think. You can go back and change an answer before you finish.",
+    step2: "Submit your answers",
+    step2Text: n => `When all ${n} are answered, your choices are saved.`,
+    step3: "See your summary",
+    step3Text: "You get a summary of every choice you made.",
+    nameLabel: "What should we call you?",
+    nameHint: "Your answers save as you go on this device.",
+    start: "Answer the first situation →",
+    takeTime: "◷ Take your time",
+    prev: "← Previous",
+    next: "Next",
+    finish: "Finish",
+    privateNote: "Your choices are private. You can change an answer before finishing.",
+    summary: "Your summary",
+    thanks: name => `Thank you, ${name}.`,
+    saved: "Your answers are saved.",
+    saving: "Saving your answers…",
+    saveFail: "Couldn't save your answers right now.",
+    tryAgain: "Try again",
+    again: "Start again",
+    // Answer together
+    tIntroTitle: "Answer the same situations, then see where you meet.",
+    tIntroText: n => `Create an invite link and send it to your partner. You each answer the same ${n} situations on your own. When both of you finish, you both see each other's answers and how often you agree.`,
+    tStep1: "Create your invite link",
+    tStep1Text: "Send it to your partner. Only someone with the link can join, and only one person can use it.",
+    tStep2: "Answer on your own",
+    tStep2Text: "Neither of you can see the other's answers while you are answering.",
+    tStep3: "See where you agree",
+    tStep3Text: "When both of you finish, you both see every answer side by side, plus your agree and disagree percentage.",
+    createLink: "Create invite link →",
+    working: "One moment…",
+    errGeneric: "Something went wrong. Please try again.",
+    invitedEyebrow: "You're invited",
+    invitedTitle: name => `${name} invited you to answer together`,
+    invitedText: n => `Answer the same ${n} situations on your own. When you both finish, you'll both see each other's answers and how often you agree.`,
+    joinStart: "Join and start →",
+    inviteBad: "This invite link isn't valid. Ask your partner to send it again.",
+    inviteTaken: "This invite link has already been used.",
+    hi: name => `Hi, ${name}`,
+    sendLink: "Send this link to your partner. Only one person can use it.",
+    copy: "Copy",
+    copied: "Copied",
+    you: "You",
+    both: "You both",
+    partner: "Your partner",
+    stFinished: "Finished",
+    stAnswering: "Still answering",
+    stNotJoined: "Hasn't joined yet",
+    startAnswering: "Start answering →",
+    continueAnswering: "Continue answering →",
+    waiting: name => `Your results will appear here when ${name} finishes.`,
+    waitingNoPartner: "Your results will appear here when your partner joins and finishes.",
+    refresh: "Refresh",
+    autoRefresh: "Updates by itself every 15 seconds.",
+    answeredOf: (x, n) => `${x} of ${n} answered`,
+    sending: "Sending your answers…",
+    leave: "Leave this together session on this device",
+    newTogether: "Start a new together session",
+    leaveConfirm: "Leave this together session on this device? You won't be able to come back to it.",
+    resultsEyebrow: "Your results together",
+    agree: "Agree",
+    disagree: "Disagree",
+    ofN: (x, n) => `${x} of ${n} situations`,
+    whereDisagree: "Where you disagree",
+    whereAgree: "Where you agree",
+    noneHere: "None.",
+  },
+  th: {
+    back: "← กลับ",
+    footer: "Before Forever · คำถามจริงจังสำหรับคู่รัก",
+    continue: "ทำต่อจากที่บันทึกไว้",
+    openTogether: "เปิดการตอบด้วยกันของคุณ",
+    homeEyebrow: "คำถามจริงจังสำหรับคู่รัก",
+    homeP1: "คุณอาจรู้ว่าใครสักคนบอกว่าเขาเชื่ออะไร แต่ก็ยังไม่รู้ว่าเขาจะทำอย่างไรเมื่อชีวิตจริงเจอเรื่องยาก",
+    homeP2: n => `Before Forever พาคุณเข้าไปอยู่ใน ${n} สถานการณ์จากชีวิตจริง เกี่ยวกับเงิน ครอบครัว ศรัทธา ขอบเขต ความไว้ใจ ลูก และทุกเรื่องระหว่างนั้น เลือกสิ่งที่คุณคิดอย่างจริงใจว่าควรเกิดขึ้น`,
+    soloTitle: "ตอบคนเดียว",
+    soloText: n => `ตอบ ${n} สถานการณ์เดียวกันด้วยตัวเอง แล้วดูรูปแบบในการตัดสินใจของคุณ: สิ่งที่คุณคาดหวังจากการแต่งงาน ขอบเขตของคุณอยู่ตรงไหน คุณยอมเสียสละอะไร และสิ่งที่คุณอาจยังไม่เคยสังเกตเกี่ยวกับตัวเอง`,
+    togetherTitle: "ตอบด้วยกัน",
+    togetherText: n => `ทั้งสองคนตอบ ${n} สถานการณ์เดียวกันแยกกัน แล้วดูว่าความคิดของคุณตรงกันตรงไหน ไม่ตรงกันตรงไหน และเรื่องที่ควรคุยกันก่อนที่ชีวิตจะถามคำถามนั้นกับคุณเอง`,
+    introTitle: "คำตอบของคุณบอกอะไรเกี่ยวกับวิธีที่คุณมองการแต่งงาน?",
+    introText: n => `ตอบ ${n} สถานการณ์ที่สมจริงเกี่ยวกับครอบครัว เงิน ลูก ความเป็นส่วนตัว และชีวิตคู่ในแต่ละวัน ไม่มีการจับเวลา เลือกสิ่งที่คุณจะทำจริง ๆ`,
+    step1: n => `ตอบครบทั้ง ${n} สถานการณ์`,
+    step1Text: "เลือกคำตอบที่ใกล้เคียงกับสิ่งที่คุณคิดจริง ๆ มากที่สุด คุณย้อนกลับไปเปลี่ยนคำตอบได้ก่อนเสร็จสิ้น",
+    step2: "ส่งคำตอบ",
+    step2Text: n => `เมื่อตอบครบทั้ง ${n} ข้อ คำตอบของคุณจะถูกบันทึก`,
+    step3: "ดูสรุปของคุณ",
+    step3Text: "คุณจะได้เห็นสรุปทุกตัวเลือกที่คุณเลือก",
+    nameLabel: "เราควรเรียกคุณว่าอะไร?",
+    nameHint: "คำตอบของคุณจะถูกบันทึกไว้ในอุปกรณ์นี้ระหว่างที่ตอบ",
+    start: "เริ่มสถานการณ์แรก →",
+    takeTime: "◷ ค่อย ๆ คิด ไม่ต้องรีบ",
+    prev: "← ก่อนหน้า",
+    next: "ถัดไป",
+    finish: "เสร็จสิ้น",
+    privateNote: "คำตอบของคุณเป็นความลับ คุณเปลี่ยนคำตอบได้ก่อนกดเสร็จสิ้น",
+    summary: "สรุปของคุณ",
+    thanks: name => `ขอบคุณ ${name}`,
+    saved: "บันทึกคำตอบของคุณแล้ว",
+    saving: "กำลังบันทึกคำตอบ…",
+    saveFail: "ตอนนี้ยังบันทึกคำตอบไม่ได้",
+    tryAgain: "ลองอีกครั้ง",
+    again: "เริ่มใหม่",
+    // ตอบด้วยกัน
+    tIntroTitle: "ตอบสถานการณ์เดียวกัน แล้วดูว่าคุณคิดตรงกันตรงไหน",
+    tIntroText: n => `สร้างลิงก์เชิญแล้วส่งให้คู่ของคุณ แต่ละคนตอบ ${n} สถานการณ์เดียวกันด้วยตัวเอง เมื่อทั้งสองคนตอบเสร็จ คุณทั้งคู่จะเห็นคำตอบของกันและกัน และเห็นว่าคิดตรงกันมากแค่ไหน`,
+    tStep1: "สร้างลิงก์เชิญ",
+    tStep1Text: "ส่งให้คู่ของคุณ เฉพาะคนที่มีลิงก์เท่านั้นที่เข้าร่วมได้ และใช้ได้เพียงคนเดียว",
+    tStep2: "ต่างคนต่างตอบ",
+    tStep2Text: "ระหว่างที่ตอบ จะไม่มีใครเห็นคำตอบของอีกฝ่าย",
+    tStep3: "ดูว่าคุณคิดตรงกันตรงไหน",
+    tStep3Text: "เมื่อทั้งสองคนตอบเสร็จ คุณทั้งคู่จะเห็นทุกคำตอบเทียบกัน พร้อมเปอร์เซ็นต์ที่คิดตรงกันและไม่ตรงกัน",
+    createLink: "สร้างลิงก์เชิญ →",
+    working: "รอสักครู่…",
+    errGeneric: "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+    invitedEyebrow: "คุณได้รับคำเชิญ",
+    invitedTitle: name => `${name} ชวนคุณมาตอบด้วยกัน`,
+    invitedText: n => `ตอบ ${n} สถานการณ์เดียวกันด้วยตัวเอง เมื่อทั้งสองคนตอบเสร็จ คุณทั้งคู่จะเห็นคำตอบของกันและกัน และเห็นว่าคิดตรงกันมากแค่ไหน`,
+    joinStart: "เข้าร่วมและเริ่มเลย →",
+    inviteBad: "ลิงก์เชิญนี้ใช้ไม่ได้ ขอให้คู่ของคุณส่งมาใหม่อีกครั้ง",
+    inviteTaken: "ลิงก์เชิญนี้ถูกใช้ไปแล้ว",
+    hi: name => `สวัสดี ${name}`,
+    sendLink: "ส่งลิงก์นี้ให้คู่ของคุณ ลิงก์นี้ใช้ได้เพียงคนเดียว",
+    copy: "คัดลอก",
+    copied: "คัดลอกแล้ว",
+    you: "คุณ",
+    both: "ทั้งคู่",
+    partner: "คู่ของคุณ",
+    stFinished: "ตอบเสร็จแล้ว",
+    stAnswering: "ยังตอบอยู่",
+    stNotJoined: "ยังไม่ได้เข้าร่วม",
+    startAnswering: "เริ่มตอบ →",
+    continueAnswering: "ตอบต่อ →",
+    waiting: name => `ผลลัพธ์จะแสดงที่นี่เมื่อ ${name} ตอบเสร็จ`,
+    waitingNoPartner: "ผลลัพธ์จะแสดงที่นี่เมื่อคู่ของคุณเข้าร่วมและตอบเสร็จ",
+    refresh: "รีเฟรช",
+    autoRefresh: "อัปเดตเองทุก 15 วินาที",
+    answeredOf: (x, n) => `ตอบแล้ว ${x} จาก ${n} ข้อ`,
+    sending: "กำลังส่งคำตอบ…",
+    leave: "ออกจากการตอบด้วยกันบนอุปกรณ์นี้",
+    newTogether: "เริ่มการตอบด้วยกันครั้งใหม่",
+    leaveConfirm: "ออกจากการตอบด้วยกันบนอุปกรณ์นี้ใช่ไหม? คุณจะกลับมาที่นี่ไม่ได้อีก",
+    resultsEyebrow: "ผลลัพธ์ของคุณทั้งคู่",
+    agree: "ตรงกัน",
+    disagree: "ไม่ตรงกัน",
+    ofN: (x, n) => `${x} จาก ${n} สถานการณ์`,
+    whereDisagree: "เรื่องที่คิดไม่ตรงกัน",
+    whereAgree: "เรื่องที่คิดตรงกัน",
+    noneHere: "ไม่มี",
+  },
+};
+
+let lang = (() => { try { return localStorage.getItem(LANG_KEY) } catch { return null } })();
+if (!TEXT[lang]) lang = /^th\b/i.test(navigator.language || "") ? "th" : "en";
+const t = (k, ...a) => { const v = TEXT[lang][k] ?? TEXT.en[k]; return typeof v === "function" ? v(...a) : v };
+
+// The situations in the current language. Answer keys (A–D) never change, so saved answers work in both languages.
+const situations = () => lang === "th" && TH ? EN.map((q, i) => {
+  const th = TH[i];
+  return th ? { ...q, title: th.title, story: th.story, question: th.question,
+    options: q.options.map((o, j) => ({ key: o.key, text: th.options[j] || o.text })) } : q;
+}) : EN;
+
+function setLang(l) {
+  lang = l;
+  try { localStorage.setItem(LANG_KEY, l) } catch {}
+  route();
+}
+document.querySelectorAll(".langs button").forEach(b => b.onclick = () => setLang(b.dataset.lang));
+
+async function api(action, data) {
+  const r = await fetch("/api/couple", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action, ...data }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) { const e = new Error(j.error || r.status); e.code = j.error; throw e; }
+  return j;
+}
+
+// Every page render gets a number, so an old async request can't draw over a newer page.
+let view = 0, pollTimer = null;
+
 function home() {
-  const s = load();
+  const s = loadM("solo"), ts = loadM("together");
   app.innerHTML = `
-    ${s && !s.submitted ? `<a class="pill ghost" href="#/q/${s.current || 1}">Continue your saved session</a><div style="height:28px"></div>` : ""}
-    <p class="eyebrow">Serious questions for couples</p>
+    ${s && !s.submitted ? `<a class="pill ghost" href="#/q/${s.current || 1}">${t("continue")}</a><div style="height:14px"></div>` : ""}
+    ${ts ? `<a class="pill ghost" href="#/t/status">${t("openTogether")}</a><div style="height:14px"></div>` : ""}
+    ${(s && !s.submitted) || ts ? `<div style="height:14px"></div>` : ""}
+    <p class="eyebrow">${t("homeEyebrow")}</p>
     <h1>Before <em>Forever</em></h1>
-    <p>You can know what someone says they believe and still not know what they would do when real life gets hard.</p>
-    <p>Before Forever puts you inside ${N} real-life situations about money, family, faith, boundaries, trust, children and everything in between. Choose what you honestly think should happen.</p>
+    <p>${t("homeP1")}</p>
+    <p>${t("homeP2", N)}</p>
     <div class="cards">
       <div class="mode">
-        <h3>Answer solo</h3>
-        <p>Answer the same ${N} situations by yourself and see the patterns in your decisions: what you expect from marriage, where your boundaries are, what you would sacrifice, and what you may not have noticed about yourself.</p>
-        <a class="pill wide" href="#/solo">Answer solo ${arrow}</a>
+        <h3>${t("soloTitle")}</h3>
+        <p>${t("soloText", N)}</p>
+        <a class="pill wide" href="#/solo">${t("soloTitle")} ${arrow}</a>
       </div>
       <div class="mode light">
-        <h3>Answer together</h3>
-        <p>Both of you answer the same ${N} situations on your own, then see where your thinking meets, where it doesn't, and the conversations to have before life asks the question for you.</p>
-        <button class="pill wide" disabled>Coming soon ${arrow}</button>
+        <h3>${t("togetherTitle")}</h3>
+        <p>${t("togetherText", N)}</p>
+        <a class="pill wide" href="#/together">${t("togetherTitle")} ${arrow}</a>
       </div>
     </div>`;
 }
 
 function intro() {
-  const s = load();
+  const s = loadM("solo");
   app.innerHTML = `
-    <p class="eyebrow">Answer solo</p>
-    <h2>What do your answers say about the way you approach marriage?</h2>
-    <p>Answer ${N} realistic situations about family, money, children, privacy and everyday married life. There's no timer. Choose what you would honestly do.</p>
+    <p class="eyebrow">${t("soloTitle")}</p>
+    <h2>${t("introTitle")}</h2>
+    <p>${t("introText", N)}</p>
     <div class="steps">
-      <div class="step"><div class="num">01</div><b>Answer all ${N} situations</b><p>Pick the answer closest to what you really think. You can go back and change an answer before you finish.</p></div>
-      <div class="step"><div class="num">02</div><b>Submit your answers</b><p>When all ${N} are answered, your choices are saved.</p></div>
-      <div class="step"><div class="num">03</div><b>See your summary</b><p>You get a summary of every choice you made.</p></div>
+      <div class="step"><div class="num">01</div><b>${t("step1", N)}</b><p>${t("step1Text")}</p></div>
+      <div class="step"><div class="num">02</div><b>${t("step2")}</b><p>${t("step2Text", N)}</p></div>
+      <div class="step"><div class="num">03</div><b>${t("step3")}</b><p>${t("step3Text")}</p></div>
     </div>
-    <label for="nm">What should we call you?</label>
+    <label for="nm">${t("nameLabel")}</label>
     <input id="nm" type="text" maxlength="40" autocomplete="off" value="${esc(s && !s.submitted ? s.name : "")}" />
-    <p class="hint">Your answers save as you go on this device.</p>
-    <button class="pill" id="go" disabled>Answer the first situation →</button>`;
-  const nm = document.getElementById("nm"), go = document.getElementById("go");
+    <p class="hint">${t("nameHint")}</p>
+    <button class="pill" id="go" disabled>${t("start")}</button>`;
+  const nm = $("nm"), go = $("go");
   const check = () => go.disabled = !nm.value.trim();
   nm.oninput = check; check(); nm.focus();
   nm.onkeydown = e => { if (e.key === "Enter" && !go.disabled) go.click() };
   go.onclick = () => {
-    const old = load();
+    const old = loadM("solo");
     const keep = old && !old.submitted;
-    save({ id: keep ? old.id : crypto.randomUUID(), name: nm.value.trim(), answers: keep ? old.answers : {}, current: keep ? old.current || 1 : 1, started: keep ? old.started : new Date().toISOString() });
+    saveM("solo", { id: keep ? old.id : crypto.randomUUID(), name: nm.value.trim(), answers: keep ? old.answers : {}, current: keep ? old.current || 1 : 1, started: keep ? old.started : new Date().toISOString() });
     location.hash = `#/q/${keep ? old.current || 1 : 1}`;
   };
 }
 
-function question(n) {
-  const s = load();
-  if (!s) return location.hash = "#/solo";
+function question(n, mode) {
+  const M = MODES[mode], s = loadM(mode);
+  if (!s) return location.hash = M.start;
+  if (mode === "together" && s.finished) return location.hash = "#/t/status";
+  const S = situations();
   n = Math.min(Math.max(1, n), N);
-  s.current = n; save(s);
+  s.current = n; saveM(mode, s);
   const q = S[n - 1], picked = s.answers[q.id];
   app.innerHTML = `
     <div class="progress"><div class="dots">${S.map((x, i) => `<i class="${i + 1 === n ? "cur" : s.answers[x.id] ? "done" : ""}"></i>`).join("")}</div><span class="count">${String(n).padStart(2, "0")} / ${N}</span></div>
-    <p class="eyebrow">◷ Take your time</p>
+    <p class="eyebrow">${t("takeTime")}</p>
     <h2>${esc(q.title)}</h2>
     <div class="story">${q.story.map(p => `<p>${esc(p)}</p>`).join("")}</div>
     <p class="q">${esc(q.question)}</p>
     ${q.options.map(o => `<button class="opt ${picked === o.key ? "sel" : ""}" data-k="${o.key}"><span class="k">${o.key}</span><span>${esc(o.text)}</span></button>`).join("")}
     <div class="nav">
-      <button class="prev" id="prev" ${n === 1 ? "disabled" : ""}>← Previous</button>
-      <button class="pill" id="next" ${picked ? "" : "disabled"}>${n === N ? "Finish" : "Next"} →</button>
+      <button class="prev" id="prev" ${n === 1 ? "disabled" : ""}>${t("prev")}</button>
+      <button class="pill" id="next" ${picked ? "" : "disabled"}>${n === N ? t("finish") : t("next")} →</button>
     </div>
-    <p class="note">Your choices are private. You can change an answer before finishing.</p>`;
+    <p class="note">${t("privateNote")}</p>`;
   app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
-    s.answers[q.id] = b.dataset.k; save(s);
+    s.answers[q.id] = b.dataset.k; saveM(mode, s);
+    if (mode === "together") sendProgress(s);
     app.querySelectorAll(".opt").forEach(x => x.classList.toggle("sel", x === b));
-    document.getElementById("next").disabled = false;
+    $("next").disabled = false;
   });
-  document.getElementById("prev").onclick = () => location.hash = `#/q/${n - 1}`;
-  document.getElementById("next").onclick = () => location.hash = n === N ? "#/done" : `#/q/${n + 1}`;
+  $("prev").onclick = () => location.hash = `${M.q}${n - 1}`;
+  $("next").onclick = () => location.hash = n === N ? M.done : `${M.q}${n + 1}`;
   window.scrollTo(0, 0);
 }
 
+let saving = false;
 async function done() {
-  const s = load();
+  const s = loadM("solo");
   if (!s) return location.hash = "#/";
+  const S = situations();
   const missing = S.findIndex(q => !s.answers[q.id]);
   if (missing >= 0) return location.hash = `#/q/${missing + 1}`;
   app.innerHTML = `
-    <p class="eyebrow">Your summary</p>
-    <h2>Thank you, ${esc(s.name)}.</h2>
-    <p class="status" id="st">${s.submitted ? "Your answers are saved." : "Saving your answers…"}</p>
+    <p class="eyebrow">${t("summary")}</p>
+    <h2>${esc(t("thanks", s.name))}</h2>
+    <p class="status ${s.submitted ? "ok" : ""}" id="st">${s.submitted ? t("saved") : t("saving")}</p>
     ${S.map(q => { const o = q.options.find(o => o.key === s.answers[q.id]); return `<div class="report-item"><b>${q.id}. ${esc(q.title)}</b><p><strong>${o.key}.</strong> ${esc(o.text)}</p></div>` }).join("")}
     <div style="height:20px"></div>
-    <button class="pill" id="again">Start again</button>`;
-  document.getElementById("again").onclick = () => { localStorage.removeItem(KEY); location.hash = "#/solo" };
-  if (s.submitted) return;
-  const st = document.getElementById("st");
+    <button class="pill" id="again">${t("again")}</button>`;
+  $("again").onclick = () => { clearM("solo"); location.hash = "#/solo" };
+  if (s.submitted || saving) return;
+  saving = true;
   try {
     const r = await fetch("/api/save", { method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id: s.id, name: s.name, mode: "solo", started: s.started, answers: s.answers }) });
+      body: JSON.stringify({ id: s.id, name: s.name, mode: "solo", lang, started: s.started, answers: s.answers }) });
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
-    s.submitted = true; save(s);
-    st.textContent = "Your answers are saved."; st.className = "status ok";
+    s.submitted = true; saveM("solo", s);
+    const st = $("st");
+    if (st) { st.textContent = t("saved"); st.className = "status ok"; }
   } catch (e) {
-    st.innerHTML = `Couldn't save your answers right now. <a href="#/done" onclick="location.reload()">Try again</a>`; st.className = "status err";
+    const st = $("st");
+    if (st) { st.innerHTML = `${t("saveFail")} <a href="#/done" onclick="location.reload()">${t("tryAgain")}</a>`; st.className = "status err"; }
+  } finally { saving = false; }
+}
+
+/* ---------- Answer together ---------- */
+
+// Tell the server HOW MANY situations are answered (not which answers), so the partner can follow along.
+let progressTimer = null;
+function sendProgress(s) {
+  clearTimeout(progressTimer);
+  progressTimer = setTimeout(() => {
+    api("progress", { id: s.id, token: s.token, count: Object.keys(s.answers).length }).catch(() => {});
+  }, 1200);
+}
+
+// Name box + button that calls the server; shows an error under the box if it fails.
+function nameForm(onSubmit) {
+  const nm = $("nm"), go = $("go"), err = $("err"), label = go.innerHTML;
+  const check = () => go.disabled = !nm.value.trim();
+  nm.oninput = check; check(); nm.focus();
+  nm.onkeydown = e => { if (e.key === "Enter" && !go.disabled) go.click() };
+  go.onclick = async () => {
+    go.disabled = true; go.textContent = t("working"); err.hidden = true;
+    try { await onSubmit(nm.value.trim()); }
+    catch (e) {
+      if (!document.body.contains(go)) return;
+      err.textContent = e.code === "taken" ? t("inviteTaken") : t("errGeneric"); err.hidden = false;
+      go.innerHTML = label; check();
+    }
+  };
+}
+
+const nameBox = btn => `
+  <label for="nm">${t("nameLabel")}</label>
+  <input id="nm" type="text" maxlength="40" autocomplete="off" />
+  <p class="hint">${t("nameHint")}</p>
+  <p class="status err" id="err" hidden></p>
+  <button class="pill" id="go" disabled>${btn}</button>`;
+
+const message = text => `<p class="eyebrow">${t("togetherTitle")}</p><h2>${text}</h2><a class="pill ghost" href="#/">${t("back")}</a>`;
+
+function leaveButton(label) {
+  const b = $("leave");
+  if (b) b.onclick = () => { if (confirm(t("leaveConfirm"))) { clearM("together"); location.hash = "#/together"; } };
+  return label;
+}
+
+function togetherIntro() {
+  if (loadM("together")) return location.hash = "#/t/status";
+  app.innerHTML = `
+    <p class="eyebrow">${t("togetherTitle")}</p>
+    <h2>${t("tIntroTitle")}</h2>
+    <p>${t("tIntroText", N)}</p>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><b>${t("tStep1")}</b><p>${t("tStep1Text")}</p></div>
+      <div class="step"><div class="num">02</div><b>${t("tStep2")}</b><p>${t("tStep2Text")}</p></div>
+      <div class="step"><div class="num">03</div><b>${t("tStep3")}</b><p>${t("tStep3Text")}</p></div>
+    </div>
+    ${nameBox(t("createLink"))}`;
+  nameForm(async name => {
+    const r = await api("create", { name, lang });
+    saveM("together", { id: r.id, token: r.token, invite: r.invite, role: "a", name, answers: {}, current: 1, finished: false });
+    location.hash = "#/t/status";
+  });
+}
+
+async function joinPage(code) {
+  const [id, invite] = String(code).split(".");
+  const cur = loadM("together");
+  if (cur && cur.id === id) return location.hash = "#/t/status";
+  const v = view;
+  app.innerHTML = `<p class="status">${t("working")}</p>`;
+  let info;
+  try { info = await api("peek", { id, invite }); }
+  catch (e) {
+    if (v !== view) return;
+    app.innerHTML = message(e.code === "bad_invite" || e.code === "not_found" ? t("inviteBad") : t("errGeneric"));
+    return;
+  }
+  if (v !== view) return;
+  if (info.taken) { app.innerHTML = message(t("inviteTaken")); return; }
+  app.innerHTML = `
+    <p class="eyebrow">${t("invitedEyebrow")}</p>
+    <h2>${t("invitedTitle", esc(info.inviter))}</h2>
+    <p>${t("invitedText", N)}</p>
+    ${nameBox(t("joinStart"))}`;
+  nameForm(async name => {
+    const r = await api("join", { id, invite, name, lang });
+    saveM("together", { id, token: r.token, role: "b", name, answers: {}, current: 1, finished: false });
+    location.hash = "#/t/q/1";
+  });
+}
+
+async function togetherDone() {
+  const s = loadM("together");
+  if (!s) return location.hash = "#/together";
+  if (s.finished) return location.hash = "#/t/status";
+  const missing = EN.findIndex(q => !s.answers[q.id]);
+  if (missing >= 0) return location.hash = `#/t/q/${missing + 1}`;
+  const v = view;
+  app.innerHTML = `<p class="status">${t("sending")}</p>`;
+  try {
+    await api("answer", { id: s.id, token: s.token, answers: s.answers });
+    s.finished = true; saveM("together", s);
+    if (v === view) location.hash = "#/t/status";
+  } catch (e) {
+    if (v !== view) return;
+    app.innerHTML = `<p class="status err">${t("saveFail")} <a href="#/t/done" onclick="location.reload()">${t("tryAgain")}</a></p>`;
   }
 }
 
+async function togetherStatus() {
+  const s = loadM("together");
+  if (!s) return location.hash = "#/together";
+  app.innerHTML = `<p class="status">${t("working")}</p>`;
+  await refreshStatus(s, view);
+}
+
+async function refreshStatus(s, v) {
+  let st;
+  try { st = await api("status", { id: s.id, token: s.token }); }
+  catch (e) {
+    if (v !== view) return;
+    app.innerHTML = `<p class="status err">${t("errGeneric")}</p><button class="pill ghost" id="rf">${t("refresh")}</button>
+      <div><button class="linkbtn" id="leave">${t("leave")}</button></div>`;
+    $("rf").onclick = () => route(); leaveButton();
+    return;
+  }
+  if (v !== view) return;
+  if (st.me.finished && !s.finished) { s.finished = true; saveM("together", s); }
+  if (st.answers) return results(st);
+
+  const link = s.invite ? `${location.origin}${location.pathname}#/join/${s.id}.${s.invite}` : "";
+  const pName = st.partner ? esc(st.partner.name) : "";
+  const pState = !st.partner ? t("stNotJoined") : st.partner.finished ? t("stFinished") : t("stAnswering");
+  app.innerHTML = `
+    <p class="eyebrow">${t("togetherTitle")}</p>
+    <h2>${t("hi", esc(st.me.name))}</h2>
+    ${s.role === "a" && !st.partner ? `
+      <label for="lnk">${t("sendLink")}</label>
+      <div class="invite"><input id="lnk" type="text" readonly value="${esc(link)}" /><button class="pill" id="cp">${t("copy")}</button></div>` : ""}
+    <div class="who">
+      ${whoRow(t("you"), st.me.finished ? t("stFinished") : t("stAnswering"), st.me.finished,
+        st.me.finished ? N : Math.max(st.me.answered, Object.keys(s.answers || {}).length))}
+      ${whoRow(pName || t("partner"), pState, !!(st.partner && st.partner.finished), st.partner ? st.partner.answered : null)}
+    </div>
+    ${!st.me.finished
+      ? `<a class="pill" href="#/t/q/${s.current || 1}">${Object.keys(s.answers || {}).length ? t("continueAnswering") : t("startAnswering")}</a>`
+      : `<p>${st.partner ? t("waiting", pName) : t("waitingNoPartner")}</p>`}
+    <div class="refresh"><button class="pill ghost" id="rf">↻ ${t("refresh")}</button><span>${t("autoRefresh")}</span></div>
+    <div><button class="linkbtn" id="leave">${t("leave")}</button></div>`;
+  const cp = $("cp");
+  if (cp) cp.onclick = () => {
+    const ok = () => { cp.textContent = t("copied"); };
+    if (navigator.clipboard) navigator.clipboard.writeText(link).then(ok, () => { $("lnk").select(); document.execCommand("copy"); ok(); });
+    else { $("lnk").select(); document.execCommand("copy"); ok(); }
+  };
+  if ($("lnk")) $("lnk").onclick = e => e.target.select();
+  if ($("rf")) $("rf").onclick = () => route();
+  leaveButton();
+  // Keep checking every 15 seconds so the partner's progress updates by itself.
+  pollTimer = setTimeout(() => { if (v === view) refreshStatus(s, v); }, 15000);
+}
+
+// One person on the status page: name, state, and "12 of 25 answered" with a small bar.
+function whoRow(name, state, finished, answered) {
+  const bar = answered == null ? "" : `
+    <div class="mini" role="img" aria-label="${t("answeredOf", answered, N)}"><i style="width:${Math.round(answered / N * 100)}%"></i></div>
+    <small>${t("answeredOf", answered, N)}</small>`;
+  return `<div><div class="who-top"><span>${name}</span><span class="${finished ? "ok" : "wait"}">${state}</span></div>${bar}</div>`;
+}
+
+function results(st) {
+  const S = situations(), me = st.answers.me, pa = st.answers.partner;
+  const agree = S.filter(q => me[q.id] === pa[q.id]), dis = S.filter(q => me[q.id] !== pa[q.id]);
+  const pct = Math.round(agree.length / N * 100);
+  const pName = esc(st.partner.name);
+  const row = (who, o) => `<div class="row"><span>${who}</span><span><strong>${o.key}.</strong> ${esc(o.text)}</span></div>`;
+  const item = q => {
+    const pick = k => q.options.find(o => o.key === k);
+    return `<div class="report-item cmp"><b>${q.id}. ${esc(q.title)}</b>${me[q.id] === pa[q.id]
+      ? row(t("both"), pick(me[q.id]))
+      : row(t("you"), pick(me[q.id])) + row(pName, pick(pa[q.id]))}</div>`;
+  };
+  app.innerHTML = `
+    <p class="eyebrow">${t("resultsEyebrow")}</p>
+    <h2>${esc(st.me.name)} &amp; ${pName}</h2>
+    <div class="stats">
+      <div class="stat"><b>${t("agree")}</b><div class="pct">${pct}%</div><p>${t("ofN", agree.length, N)}</p></div>
+      <div class="stat light"><b>${t("disagree")}</b><div class="pct">${100 - pct}%</div><p>${t("ofN", dis.length, N)}</p></div>
+    </div>
+    <div class="bar" role="img" aria-label="${pct}% ${t("agree")}"><i style="width:${pct}%"></i></div>
+    <h3 class="sec">${t("whereDisagree")} (${dis.length})</h3>
+    ${dis.length ? dis.map(item).join("") : `<p>${t("noneHere")}</p>`}
+    <h3 class="sec">${t("whereAgree")} (${agree.length})</h3>
+    ${agree.length ? agree.map(item).join("") : `<p>${t("noneHere")}</p>`}
+    <div><button class="linkbtn" id="leave">${t("newTogether")}</button></div>`;
+  leaveButton();
+}
+
 function route() {
+  view++;
+  clearTimeout(pollTimer);
+  document.documentElement.lang = lang;
+  document.querySelectorAll(".langs button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
+  back.textContent = t("back");
+  $("footerText").textContent = t("footer");
   const h = location.hash.replace(/^#/, "") || "/";
   back.hidden = h === "/";
   if (h === "/solo") intro();
-  else if (h.startsWith("/q/")) question(parseInt(h.slice(3), 10) || 1);
+  else if (h.startsWith("/q/")) question(parseInt(h.slice(3), 10) || 1, "solo");
   else if (h === "/done") done();
+  else if (h === "/together") togetherIntro();
+  else if (h.startsWith("/t/q/")) question(parseInt(h.slice(5), 10) || 1, "together");
+  else if (h === "/t/done") togetherDone();
+  else if (h === "/t/status") togetherStatus();
+  else if (h.startsWith("/join/")) joinPage(h.slice(6));
   else home();
+  if (!h.startsWith("/q/") && !h.startsWith("/t/q/")) window.scrollTo(0, 0);
 }
 addEventListener("hashchange", route);
 route();
