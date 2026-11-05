@@ -1,13 +1,14 @@
 // Vercel serverless function for "Answer together".
 // One file per couple: couples/<id>.json. Person "a" is the inviter, person "b" joins with the invite link.
 // Secrets (invite code, personal tokens) are stored only as SHA-256 hashes.
-// A partner's answers are only returned once BOTH people have finished.
+// Nobody sees the partner's answers while still answering. Once you finish, you can follow the
+// partner's answers so far; when both finish, both get the full comparison.
 //
 // POST /api/couple  { action, ... }
 //   create { name, lang }               -> { id, invite, token }
 //   peek   { id, invite }               -> { inviter, taken }
 //   join   { id, invite, name, lang }   -> { token, partner }
-//   progress { id, token, count }       -> { ok }   (how many answered so far, no answers)
+//   progress { id, token, answers }     -> { ok }   (answers so far, can still change)
 //   answer { id, token, answers }       -> { ok }
 //   status { id, token }                -> { me, partner, answers? }
 const crypto = require("crypto");
@@ -101,17 +102,21 @@ const actions = {
       if (c[me].finished) return { write: false, result: { ok: true, already: true } };
       c[me].answers = clean;
       c[me].finished = new Date().toISOString();
+      delete c[me].partial;
       return { write: true, result: { ok: true } };
     }, "Answers submitted");
   },
 
-  // Only the NUMBER of answered situations is saved while answering, never the answers themselves.
+  // Answers so far while still answering. The partner only gets these once THEY have finished.
   async progress(b) {
-    const count = Math.max(0, Math.min(N, parseInt(b.count, 10) || 0));
+    const answers = b.answers && typeof b.answers === "object" ? b.answers : {};
+    const clean = {};
+    for (let i = 1; i <= N; i++) if (KEYS.has(answers[i])) clean[i] = answers[i];
     return update(b.id, c => {
       const me = whoAmI(c, b.token);
-      if (c[me].finished || c[me].answered === count) return { write: false, result: { ok: true } };
-      c[me].answered = count;
+      if (c[me].finished || JSON.stringify(c[me].partial || {}) === JSON.stringify(clean)) return { write: false, result: { ok: true } };
+      c[me].partial = clean;
+      c[me].answered = Object.keys(clean).length;
       return { write: true, result: { ok: true } };
     }, "Progress");
   },
@@ -122,6 +127,8 @@ const actions = {
     const info = p => ({ name: p.name, finished: !!p.finished, answered: p.finished ? N : p.answered || 0 });
     const out = { role: me, me: info(c[me]), partner: c[other] ? info(c[other]) : null };
     if (c[me].finished && c[other] && c[other].finished) out.answers = { me: c[me].answers, partner: c[other].answers };
+    // Finished early? Then you may follow your partner's answers so far (they can still change them).
+    else if (c[me].finished && c[other]) out.partnerSoFar = c[other].partial || {};
     return out;
   },
 };

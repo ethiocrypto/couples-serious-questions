@@ -94,6 +94,17 @@ input[type=text]:focus{border-color:var(--green)}
 h3.sec{font-size:24px;margin:34px 0 14px}
 .cmp .row{display:flex;gap:12px;font-size:14px;color:var(--muted);line-height:1.6;margin-top:8px}
 .cmp .row span:first-child{flex:none;width:96px;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.full{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.full summary{cursor:pointer;font-size:13px;color:var(--green);font-weight:600}
+.full .story{margin-top:12px}
+.report-item .full .story p{margin:0 0 10px;font-size:14px;line-height:1.7}
+.full .q{margin:16px 0 10px;font-size:14px}
+.fopt{display:flex;gap:12px;border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.6;color:var(--ink)}
+.fopt .k{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:10px;color:var(--muted)}
+.fopt.on{background:var(--sand);border-color:#cdbfa9}
+.fopt.on .k{background:var(--green);border-color:var(--green);color:#fff}
+.fopt em{display:block;font-style:normal;font-weight:600;color:var(--green);font-size:12px;margin-top:4px}
+.fullall{margin-top:10px}
 .linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;font:13px var(--sans);cursor:pointer;padding:0;margin-top:34px}
 .footer{display:flex;justify-content:space-between;padding:22px 24px;font-size:11px;color:var(--muted)}
 @media (max-width:640px){.cards,.steps{grid-template-columns:1fr}main{padding:12px 16px 40px}.mode{padding:24px}.topbar{padding:14px 16px}.brand>span:last-child{display:none}.stat{padding:18px}.cmp .row span:first-child{width:72px}}
@@ -176,7 +187,7 @@ const TEXT = {
     tStep2: "Answer on your own",
     tStep2Text: "Neither of you can see the other's answers while you are answering.",
     tStep3: "See where you agree",
-    tStep3Text: "When both of you finish, you both see every answer side by side, plus your agree and disagree percentage.",
+    tStep3Text: "Once you finish, you can follow your partner's answers as they go. When both of you finish, you both see every answer side by side, plus your agree and disagree percentage.",
     createLink: "Create invite link →",
     working: "One moment…",
     errGeneric: "Something went wrong. Please try again.",
@@ -214,6 +225,12 @@ const TEXT = {
     whereDisagree: "Where you disagree",
     whereAgree: "Where you agree",
     noneHere: "None.",
+    showFull: "Show full situation",
+    showAll: "Show all full situations",
+    hideAll: "Hide full situations",
+    soFarTitle: name => `${name}'s answers so far`,
+    soFarNote: (name, x, n) => `${name} has answered ${x} of ${n}. These can still change until ${name} finishes.`,
+    soFarNone: name => `${name} hasn't answered any situations yet.`,
   },
   th: {
     back: "← กลับ",
@@ -258,7 +275,7 @@ const TEXT = {
     tStep2: "ต่างคนต่างตอบ",
     tStep2Text: "ระหว่างที่ตอบ จะไม่มีใครเห็นคำตอบของอีกฝ่าย",
     tStep3: "ดูว่าคุณคิดตรงกันตรงไหน",
-    tStep3Text: "เมื่อทั้งสองคนตอบเสร็จ คุณทั้งคู่จะเห็นทุกคำตอบเทียบกัน พร้อมเปอร์เซ็นต์ที่คิดตรงกันและไม่ตรงกัน",
+    tStep3Text: "เมื่อคุณตอบเสร็จ คุณจะติดตามคำตอบของคู่ได้ระหว่างที่เขาตอบ เมื่อทั้งสองคนตอบเสร็จ คุณทั้งคู่จะเห็นทุกคำตอบเทียบกัน พร้อมเปอร์เซ็นต์ที่คิดตรงกันและไม่ตรงกัน",
     createLink: "สร้างลิงก์เชิญ →",
     working: "รอสักครู่…",
     errGeneric: "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
@@ -296,6 +313,12 @@ const TEXT = {
     whereDisagree: "เรื่องที่คิดไม่ตรงกัน",
     whereAgree: "เรื่องที่คิดตรงกัน",
     noneHere: "ไม่มี",
+    showFull: "ดูสถานการณ์เต็ม",
+    showAll: "แสดงสถานการณ์เต็มทั้งหมด",
+    hideAll: "ซ่อนสถานการณ์เต็ม",
+    soFarTitle: name => `คำตอบของ ${name} จนถึงตอนนี้`,
+    soFarNote: (name, x, n) => `${name} ตอบแล้ว ${x} จาก ${n} ข้อ คำตอบยังเปลี่ยนได้จนกว่า ${name} จะตอบเสร็จ`,
+    soFarNone: name => `${name} ยังไม่ได้ตอบสถานการณ์ใดเลย`,
   },
 };
 
@@ -420,9 +443,11 @@ async function done() {
     <p class="eyebrow">${t("summary")}</p>
     <h2>${esc(t("thanks", s.name))}</h2>
     <p class="status ${s.submitted ? "ok" : ""}" id="st">${s.submitted ? t("saved") : t("saving")}</p>
-    ${S.map(q => { const o = q.options.find(o => o.key === s.answers[q.id]); return `<div class="report-item"><b>${q.id}. ${esc(q.title)}</b><p><strong>${o.key}.</strong> ${esc(o.text)}</p></div>` }).join("")}
+    ${fullAllButton()}<div style="height:16px"></div>
+    ${S.map(q => { const o = q.options.find(o => o.key === s.answers[q.id]); return `<div class="report-item"><b>${q.id}. ${esc(q.title)}</b><p><strong>${o.key}.</strong> ${esc(o.text)}</p>${fullSituation(q, { [o.key]: [t("you")] })}</div>` }).join("")}
     <div style="height:20px"></div>
     <button class="pill" id="again">${t("again")}</button>`;
+  wireFull();
   $("again").onclick = () => { clearM("solo"); location.hash = "#/solo" };
   if (s.submitted || saving) return;
   saving = true;
@@ -446,7 +471,7 @@ let progressTimer = null;
 function sendProgress(s) {
   clearTimeout(progressTimer);
   progressTimer = setTimeout(() => {
-    api("progress", { id: s.id, token: s.token, count: Object.keys(s.answers).length }).catch(() => {});
+    api("progress", { id: s.id, token: s.token, answers: s.answers }).catch(() => {});
   }, 1200);
 }
 
@@ -585,7 +610,9 @@ async function refreshStatus(s, v) {
       ? `<a class="pill" href="#/t/q/${s.current || 1}">${Object.keys(s.answers || {}).length ? t("continueAnswering") : t("startAnswering")}</a>`
       : `<p>${st.partner ? t("waiting", pName) : t("waitingNoPartner")}</p>`}
     <div class="refresh"><button class="pill ghost" id="rf">↻ ${t("refresh")}</button><span>${t("autoRefresh")}</span></div>
+    ${st.partnerSoFar ? soFar(s, st) : ""}
     <div><button class="linkbtn" id="leave">${t("leave")}</button></div>`;
+  wireFull();
   const cp = $("cp");
   if (cp) cp.onclick = () => {
     const ok = () => { cp.textContent = t("copied"); };
@@ -607,32 +634,80 @@ function whoRow(name, state, finished, answered) {
   return `<div><div class="who-top"><span>${name}</span><span class="${finished ? "ok" : "wait"}">${state}</span></div>${bar}</div>`;
 }
 
-function results(st) {
-  const S = situations(), me = st.answers.me, pa = st.answers.partner;
+// Which full situations are open, kept across the 15-second refresh.
+let showAllFull = false;
+const openFull = new Set();
+
+// The whole situation (story, question, all four answers) with who picked which.
+function fullSituation(q, marks) {
+  return `<details class="full" data-q="${q.id}" ${showAllFull || openFull.has(q.id) ? "open" : ""}>
+    <summary>${t("showFull")}</summary>
+    <div class="story">${q.story.map(p => `<p>${esc(p)}</p>`).join("")}</div>
+    <p class="q">${esc(q.question)}</p>
+    ${q.options.map(o => `<div class="fopt ${marks[o.key] ? "on" : ""}"><span class="k">${o.key}</span><span>${esc(o.text)}${marks[o.key] ? `<em>${marks[o.key].join(" · ")}</em>` : ""}</span></div>`).join("")}
+  </details>`;
+}
+
+const fullAllButton = () => `<button class="pill ghost fullall" id="fullAll">${showAllFull ? t("hideAll") : t("showAll")}</button>`;
+
+function wireFull() {
+  app.querySelectorAll("details.full").forEach(d => d.ontoggle = () => {
+    const id = Number(d.dataset.q);
+    if (d.open) openFull.add(id); else openFull.delete(id);
+  });
+  const b = $("fullAll");
+  if (b) b.onclick = () => {
+    showAllFull = !showAllFull; openFull.clear();
+    app.querySelectorAll("details.full").forEach(d => d.open = showAllFull);
+    app.querySelectorAll("#fullAll").forEach(x => x.textContent = showAllFull ? t("hideAll") : t("showAll"));
+  };
+}
+
+// Agree / disagree numbers and both lists, for the situations in S.
+function compareBlock(me, pa, pName, S) {
   const agree = S.filter(q => me[q.id] === pa[q.id]), dis = S.filter(q => me[q.id] !== pa[q.id]);
-  const pct = Math.round(agree.length / N * 100);
-  const pName = esc(st.partner.name);
+  const total = S.length, pct = total ? Math.round(agree.length / total * 100) : 0;
   const row = (who, o) => `<div class="row"><span>${who}</span><span><strong>${o.key}.</strong> ${esc(o.text)}</span></div>`;
   const item = q => {
     const pick = k => q.options.find(o => o.key === k);
-    return `<div class="report-item cmp"><b>${q.id}. ${esc(q.title)}</b>${me[q.id] === pa[q.id]
+    const same = me[q.id] === pa[q.id];
+    const marks = same ? { [me[q.id]]: [t("both")] } : { [me[q.id]]: [t("you")], [pa[q.id]]: [pName] };
+    return `<div class="report-item cmp"><b>${q.id}. ${esc(q.title)}</b>${same
       ? row(t("both"), pick(me[q.id]))
-      : row(t("you"), pick(me[q.id])) + row(pName, pick(pa[q.id]))}</div>`;
+      : row(t("you"), pick(me[q.id])) + row(pName, pick(pa[q.id]))}${fullSituation(q, marks)}</div>`;
   };
-  app.innerHTML = `
-    <p class="eyebrow">${t("resultsEyebrow")}</p>
-    <h2>${esc(st.me.name)} &amp; ${pName}</h2>
+  return `
     <div class="stats">
-      <div class="stat"><b>${t("agree")}</b><div class="pct">${pct}%</div><p>${t("ofN", agree.length, N)}</p></div>
-      <div class="stat light"><b>${t("disagree")}</b><div class="pct">${100 - pct}%</div><p>${t("ofN", dis.length, N)}</p></div>
+      <div class="stat"><b>${t("agree")}</b><div class="pct">${pct}%</div><p>${t("ofN", agree.length, total)}</p></div>
+      <div class="stat light"><b>${t("disagree")}</b><div class="pct">${total ? 100 - pct : 0}%</div><p>${t("ofN", dis.length, total)}</p></div>
     </div>
     <div class="bar" role="img" aria-label="${pct}% ${t("agree")}"><i style="width:${pct}%"></i></div>
+    ${fullAllButton()}
     <h3 class="sec">${t("whereDisagree")} (${dis.length})</h3>
     ${dis.length ? dis.map(item).join("") : `<p>${t("noneHere")}</p>`}
     <h3 class="sec">${t("whereAgree")} (${agree.length})</h3>
-    ${agree.length ? agree.map(item).join("") : `<p>${t("noneHere")}</p>`}
+    ${agree.length ? agree.map(item).join("") : `<p>${t("noneHere")}</p>`}`;
+}
+
+// You finished first: compare with what your partner has answered so far.
+function soFar(s, st) {
+  const pa = st.partnerSoFar || {}, pName = esc(st.partner.name);
+  const S = situations().filter(q => pa[q.id]);
+  return `
+    <h3 class="sec">${t("soFarTitle", pName)}</h3>
+    <p>${S.length ? t("soFarNote", pName, S.length, N) : t("soFarNone", pName)}</p>
+    ${S.length ? compareBlock(s.answers, pa, pName, S) : ""}`;
+}
+
+function results(st) {
+  const pName = esc(st.partner.name);
+  app.innerHTML = `
+    <p class="eyebrow">${t("resultsEyebrow")}</p>
+    <h2>${esc(st.me.name)} &amp; ${pName}</h2>
+    ${compareBlock(st.answers.me, st.answers.partner, pName, situations())}
     <div><button class="linkbtn" id="leave">${t("newTogether")}</button></div>`;
   leaveButton();
+  wireFull();
 }
 
 function route() {
