@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Before Forever — Serious Questions for Couples</title>
+<meta name="description" content="25 real-life marriage situations. Answer solo and see what your choices say about you." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#f8f6f1;--card:#fcfbf8;--sand:#efe6da;--ink:#23342f;--muted:#6b7a74;--green:#315e50;--green-soft:#86a397;--line:#e6e0d4;--accent:#c97b6a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-size:14px;letter-spacing:0}
+.back{font-size:13px;color:var(--muted);text-decoration:none}
+main{max-width:760px;margin:0 auto;padding:24px 20px 60px;min-height:70vh}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:600;margin:0 0 14px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.08;margin:0 0 18px}
+h1{font-size:clamp(38px,7vw,58px);letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--green)}
+h2{font-size:clamp(30px,5.5vw,44px)}
+p{color:var(--muted);line-height:1.7;font-size:16px;margin:0 0 16px}
+.pill{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;border:0;border-radius:999px;background:var(--green);color:#fff;font:600 15px "DM Sans",sans-serif;padding:16px 26px;cursor:pointer;text-decoration:none;transition:background .15s,transform .1s}
+.pill:hover{background:#274d42}.pill:active{transform:scale(.98)}
+.pill:disabled{background:var(--green-soft);cursor:not-allowed}
+.pill.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:500;padding:10px 18px;font-size:13px}
+.pill.wide{width:100%;padding:20px 26px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:34px 0}
+.mode{background:var(--sand);border:1px solid var(--line);border-radius:26px;padding:30px;display:flex;flex-direction:column}
+.mode h3{font-size:26px;letter-spacing:.06em;text-transform:uppercase}
+.mode p{flex:1;margin-bottom:28px}
+.mode.light{background:var(--card)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.step .num{font-family:Fraunces,serif;color:var(--accent);font-size:26px;margin-bottom:12px}
+.step b{display:block;font-size:14px;margin-bottom:8px}
+.step p{font-size:13px;margin:0;line-height:1.6}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:10px}
+input[type=text]{width:100%;max-width:320px;padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:15px "DM Sans",sans-serif;color:var(--ink);outline:none}
+input[type=text]:focus{border-color:var(--green)}
+.hint{font-size:12px;color:var(--muted);margin:10px 0 26px}
+.progress{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.dots{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+.dots i{height:4px;width:12px;border-radius:4px;background:var(--line)}
+.dots i.done{background:var(--green-soft)}.dots i.cur{background:var(--green);width:22px}
+.count{font-size:12px;color:var(--muted)}
+.story p{color:#4d5b56}
+.q{font-weight:700;margin:28px 0 20px;color:var(--ink)}
+.opt{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:12px;cursor:pointer;font:14px/1.6 "DM Sans",sans-serif;color:var(--ink);transition:border .15s,background .15s}
+.opt:hover{border-color:var(--green-soft)}
+.opt .k{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:11px;color:var(--muted)}
+.opt.sel{background:var(--sand);border-color:#cdbfa9}
+.opt.sel .k{background:var(--green);border-color:var(--green);color:#fff}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+.prev{background:none;border:0;color:var(--muted);font:14px "DM Sans",sans-serif;cursor:pointer}
+.prev:disabled{opacity:.4;cursor:default}
+.note{text-align:center;font-size:12px;margin-top:22px}
+.report-item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:12px}
+.report-item b{font-family:Fraunces,serif;font-weight:500;font-size:18px;display:block;margin-bottom:6px}
+.report-item p{margin:0;font-size:14px}
+.status{font-size:13px;margin:6px 0 22px}
+.status.ok{color:var(--green)}.status.err{color:#b04a3a}
+.footer{display:flex;justify-content:space-between;padding:22px 24px;font-size:11px;color:var(--muted)}
+@media (max-width:640px){.cards,.steps{grid-template-columns:1fr}main{padding:12px 16px 40px}.mode{padding:24px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="#/" class="brand"><span class="brand-mark">B</span><span>Before Forever</span></a>
+  <a href="#/" class="back" id="backLink" hidden>← Back</a>
+</header>
+<main id="app"></main>
+<footer class="footer"><span>Before Forever · Serious questions for couples</span></footer>
+
+<script src="questions.js"></script>
+<script>
+const S = window.SITUATIONS, N = S.length, KEY = "bf_session";
+const app = document.getElementById("app"), back = document.getElementById("backLink");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) } catch { return null } };
+const save = s => { try { localStorage.setItem(KEY, JSON.stringify(s)) } catch {} };
+const arrow = '<span aria-hidden="true">↗</span>';
+
+function home() {
+  const s = load();
+  app.innerHTML = `
+    ${s && !s.submitted ? `<a class="pill ghost" href="#/q/${s.current || 1}">Continue your saved session</a><div style="height:28px"></div>` : ""}
+    <p class="eyebrow">Serious questions for couples</p>
+    <h1>Before <em>Forever</em></h1>
+    <p>You can know what someone says they believe and still not know what they would do when real life gets hard.</p>
+    <p>Before Forever puts you inside ${N} real-life situations about money, family, faith, boundaries, trust, children and everything in between. Choose what you honestly think should happen.</p>
+    <div class="cards">
+      <div class="mode">
+        <h3>Answer solo</h3>
+        <p>Answer the same ${N} situations by yourself and see the patterns in your decisions: what you expect from marriage, where your boundaries are, what you would sacrifice, and what you may not have noticed about yourself.</p>
+        <a class="pill wide" href="#/solo">Answer solo ${arrow}</a>
+      </div>
+      <div class="mode light">
+        <h3>Answer together</h3>
+        <p>Both of you answer the same ${N} situations on your own, then see where your thinking meets, where it doesn't, and the conversations to have before life asks the question for you.</p>
+        <button class="pill wide" disabled>Coming soon ${arrow}</button>
+      </div>
+    </div>`;
+}
+
+function intro() {
+  const s = load();
+  app.innerHTML = `
+    <p class="eyebrow">Answer solo</p>
+    <h2>What do your answers say about the way you approach marriage?</h2>
+    <p>Answer ${N} realistic situations about family, money, children, privacy and everyday married life. There's no timer. Choose what you would honestly do.</p>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><b>Answer all ${N} situations</b><p>Pick the answer closest to what you really think. You can go back and change an answer before you finish.</p></div>
+      <div class="step"><div class="num">02</div><b>Submit your answers</b><p>When all ${N} are answered, your choices are saved.</p></div>
+      <div class="step"><div class="num">03</div><b>See your summary</b><p>You get a summary of every choice you made.</p></div>
+    </div>
+    <label for="nm">What should we call you?</label>
+    <input id="nm" type="text" maxlength="40" autocomplete="off" value="${esc(s && !s.submitted ? s.name : "")}" />
+    <p class="hint">Your answers save as you go on this device.</p>
+    <button class="pill" id="go" disabled>Answer the first situation →</button>`;
+  const nm = document.getElementById("nm"), go = document.getElementById("go");
+  const check = () => go.disabled = !nm.value.trim();
+  nm.oninput = check; check(); nm.focus();
+  nm.onkeydown = e => { if (e.key === "Enter" && !go.disabled) go.click() };
+  go.onclick = () => {
+    const old = load();
+    const keep = old && !old.submitted;
+    save({ id: keep ? old.id : crypto.randomUUID(), name: nm.value.trim(), answers: keep ? old.answers : {}, current: keep ? old.current || 1 : 1, started: keep ? old.started : new Date().toISOString() });
+    location.hash = `#/q/${keep ? old.current || 1 : 1}`;
+  };
+}
+
+function question(n) {
+  const s = load();
+  if (!s) return location.hash = "#/solo";
+  n = Math.min(Math.max(1, n), N);
+  s.current = n; save(s);
+  const q = S[n - 1], picked = s.answers[q.id];
+  app.innerHTML = `
+    <div class="progress"><div class="dots">${S.map((x, i) => `<i class="${i + 1 === n ? "cur" : s.answers[x.id] ? "done" : ""}"></i>`).join("")}</div><span class="count">${String(n).padStart(2, "0")} / ${N}</span></div>
+    <p class="eyebrow">◷ Take your time</p>
+    <h2>${esc(q.title)}</h2>
+    <div class="story">${q.story.map(p => `<p>${esc(p)}</p>`).join("")}</div>
+    <p class="q">${esc(q.question)}</p>
+    ${q.options.map(o => `<button class="opt ${picked === o.key ? "sel" : ""}" data-k="${o.key}"><span class="k">${o.key}</span><span>${esc(o.text)}</span></button>`).join("")}
+    <div class="nav">
+      <button class="prev" id="prev" ${n === 1 ? "disabled" : ""}>← Previous</button>
+      <button class="pill" id="next" ${picked ? "" : "disabled"}>${n === N ? "Finish" : "Next"} →</button>
+    </div>
+    <p class="note">Your choices are private. You can change an answer before finishing.</p>`;
+  app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    s.answers[q.id] = b.dataset.k; save(s);
+    app.querySelectorAll(".opt").forEach(x => x.classList.toggle("sel", x === b));
+    document.getElementById("next").disabled = false;
+  });
+  document.getElementById("prev").onclick = () => location.hash = `#/q/${n - 1}`;
+  document.getElementById("next").onclick = () => location.hash = n === N ? "#/done" : `#/q/${n + 1}`;
+  window.scrollTo(0, 0);
+}
+
+async function done() {
+  const s = load();
+  if (!s) return location.hash = "#/";
+  const missing = S.findIndex(q => !s.answers[q.id]);
+  if (missing >= 0) return location.hash = `#/q/${missing + 1}`;
+  app.innerHTML = `
+    <p class="eyebrow">Your summary</p>
+    <h2>Thank you, ${esc(s.name)}.</h2>
+    <p class="status" id="st">${s.submitted ? "Your answers are saved." : "Saving your answers…"}</p>
+    ${S.map(q => { const o = q.options.find(o => o.key === s.answers[q.id]); return `<div class="report-item"><b>${q.id}. ${esc(q.title)}</b><p><strong>${o.key}.</strong> ${esc(o.text)}</p></div>` }).join("")}
+    <div style="height:20px"></div>
+    <button class="pill" id="again">Start again</button>`;
+  document.getElementById("again").onclick = () => { localStorage.removeItem(KEY); location.hash = "#/solo" };
+  if (s.submitted) return;
+  const st = document.getElementById("st");
+  try {
+    const r = await fetch("/api/save", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: s.id, name: s.name, mode: "solo", started: s.started, answers: s.answers }) });
+    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
+    s.submitted = true; save(s);
+    st.textContent = "Your answers are saved."; st.className = "status ok";
+  } catch (e) {
+    st.innerHTML = `Couldn't save your answers right now. <a href="#/done" onclick="location.reload()">Try again</a>`; st.className = "status err";
+  }
+}
+
+function route() {
+  const h = location.hash.replace(/^#/, "") || "/";
+  back.hidden = h === "/";
+  if (h === "/solo") intro();
+  else if (h.startsWith("/q/")) question(parseInt(h.slice(3), 10) || 1);
+  else if (h === "/done") done();
+  else home();
+}
+addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
